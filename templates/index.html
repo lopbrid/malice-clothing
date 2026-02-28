@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALICE Clothing</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <img class="logo-img" src="{% static 'images/logo.jpg' %}" alt="Logo">
+</head>
+
+<body>
+
+  <header>
+    <span>MALICE</span>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#products">Shop</a>
+      <span class="cart-btn" onclick="toggleCart()">
+        Cart (<span id="cartCount">0</span>)
+      </span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="{% static 'images/logo.jpg' %}">
+    <h1>MALICE</h1>
+    <p>Built from passion. Worn with confidence.
+      Streetwear for those who create their own path.
+      Quality first. No compromise.</p>
+
+    <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      Shop Now
+    </button>
+  </section>
+
+  <section class="products" id="products">
+    <h2>Featured Drops</h2>
+
+    <div class="product-grid" id="productGrid">
+  </div>
+  </section>
+
+
+  <!-- CART -->
+  <div class="cart-drawer" id="cartDrawer">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p>Total: ₱<span id="total">0</span></p>
+    <button class="checkout" onclick="openCheckout()">Checkout</button>
+  </div>
+
+  <!-- CHECKOUT -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-box">
+      <h3>Checkout</h3>
+      <input placeholder="Full Name">
+      <input placeholder="Address">
+      <input placeholder="Phone Number">
+
+      <select>
+        <option>Cash on Delivery</option>
+        <option>GCash</option>
+        <option>Maya</option>
+      </select>
+
+      <button class="checkout" onclick="submitOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 MALICE Clothing</p>
+    <p>Visit our website:
+      <a href="https://maliceclothing.com" target="_blank" style="color:#ff8c00; text-decoration:none;">
+        MALICE Clothing
+      </a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="{% static 'js/script.js' %}" defer></script>
+
+</body>
+
+</html>
