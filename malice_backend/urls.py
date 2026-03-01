@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls')),
     path('', home),
-    path('', TemplateView.as_view(template_name="index.html")),  # serve index.html at /
+    path('', TemplateView.as_view(template_name="home.html")),  # serve index.html at /
 ]
 
 # Serve media files

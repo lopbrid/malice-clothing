@@ -45,16 +45,17 @@
   <section class="products" id="products">
     <h2>Featured Drops</h2>
 
-    <div class="product-grid" id="productGrid">
-      {% for product in products %}
+  <div class="product-grid" id="productGrid">
+    {% for product in products %}
       <div class="product-card">
         <img src="{{ product.image.url }}" alt="{{ product.name }}">
         <h3>{{ product.name }}</h3>
         <p>₱{{ product.price }}</p>
-        <button onclick="addToCart({{ product.id }})">Add to Cart</button>
       </div>
-      {% endfor %}
-    </div>
+    {% empty %}
+      <p>No products available.</p>
+    {% endfor %}
+  </div>
 
   </section>
 

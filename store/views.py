@@ -6,8 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Product, ProductVariant
 
 def home(request):
-    products = Product.objects.all()  # Fetch all products from DB
-    return render(request, "home.html", {"products": products})
+    products = Product.objects.all()  # get all products
+    return render(request, 'home.html', {'products': products})
 
 @api_view(['GET'])
 def product_list(request):
