@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: malice-clothing
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn malice_backend.wsgi:application"
