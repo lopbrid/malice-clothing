@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'malice_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'malice_db',
-        'USER': 'root',
-        'PASSWORD': 'ginamos_166070439',
-        'HOST': '127.0.0.1',  # safer than 'localhost' on Windows
-        'PORT': '3306',
+        'NAME': os.environ.get('DB_NAME', 'malice_db'),
+        'USER': os.environ.get('DB_USER', 'root'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'ginamos_166070439'),
+        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
     }
 }
 
