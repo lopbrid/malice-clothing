@@ -81,13 +81,14 @@ WSGI_APPLICATION = 'malice_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydbname',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'mydb.xxxxxx.render.com',  # NOT localhost
+        'NAME': 'malice_db',
+        'USER': 'root',
+        'PASSWORD': 'ginamos_166070439',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
