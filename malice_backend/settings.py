@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'malice_db',
         'USER': 'root',
         'PASSWORD': 'ginamos_166070439',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',  # safer than 'localhost' on Windows
         'PORT': '3306',
     }
 }
